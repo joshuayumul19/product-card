@@ -1,0 +1,168 @@
+$grey: hsl(228, 12%, 48%);
+$dark-blue: hsl(212, 21%, 14%);
+$cyan-green: hsl(158, 36%, 37%);
+$white: white;
+$texts-font: "Montserrat";
+$prices-font: 'Fraunces', sans-serif;
+$page-background: hsl(30, 38%, 92%);
+$button-background-color: hsl(158, 36%, 37%);
+$hoveredButton-background-color: hsl(156, 42%, 18%);
+
+@import "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $page-background;
+}
+
+.card {
+    display: flex;
+    width: 40%;
+    margin: 5% auto 2%;
+    height: 525px;
+}
+
+.image-desktop-view {
+    border-radius: 2% 0 0 2%;
+    width: 50%;
+}
+
+.image-mobile-view {
+    display: none;
+}
+
+.product-content {
+    border-radius: 0 2% 2% 0;
+    padding: 5%;
+
+    >* {
+        margin-bottom: 7%;
+    }
+}
+
+.product-category {
+    font-family: $texts-font;
+    letter-spacing: 5px;
+    color: $grey;
+    font-weight: 500;
+}
+
+.product-name {
+    font-family: $prices-font;
+    font-weight: 700;
+    font-size: 50px;
+    color: $dark-blue;
+    line-height: 50px;
+}
+
+p {
+    font-family: $texts-font;
+    color: $grey;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.prices {
+    display: flex;
+    align-items: center;
+}
+
+.new-price {
+    font-family: $prices-font;
+    color: $cyan-green;
+}
+
+.old-price {
+    text-decoration: line-through;
+    margin-left: 50px;
+    color: $grey;
+    font-family: $texts-font;
+}
+
+button {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    height: 55px;
+    align-items: center;
+    font-family: $texts-font;
+    color: $white;
+    background-color: $button-background-color;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+
+    &:hover {
+        background-color: $hoveredButton-background-color;
+        cursor: pointer;
+    }
+}
+
+i {
+    margin-right: 10px;
+}
+
+.attribution {
+    text-align: center;
+}
+
+@media only screen and (min-width:1201px) and (max-width:1669px) {
+    .card {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width:992.5px) and (max-width:1200px) {
+    .card {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width:992px) {
+    .card {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .card {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .card {
+        margin: 5% auto 0 auto;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .image-desktop-view {
+        display: none;
+    }
+
+    .image-mobile-view {
+        display: block;
+        border-radius: 2% 2% 0 0;
+    }
+
+    .product-content {
+        width: 100%;
+        padding: 5% 8%;
+    }
+
+    button {
+        width: 80%;
+    }
+
+    .attribution {
+        margin-top: 65%;
+    }
+}
